@@ -62,27 +62,43 @@ func main() {// 2. switch 문
 // 복잡한 if..else 반복문을 단순화하는 데 유용한, switch 뒤에 조건변수 or Expression을 적지 않는 용법
 func grade (score int) {
   switch {
-    case score >= 90:
-      println("A"
-    case score >= 80:
-      println("B"
-    case score >= 70:
-      println("C"
-    case score >= 60:
-      println("D")
-    default:
-      println("No Hope")
+  case score >= 90:
+    println("A"
+  case score >= 80:
+    println("B"
+  case score >= 70:
+    println("C"
+  case score >= 60:
+    println("D")
+  default:
+    println("No Hope")
   }
 }
 
 // switch 변수의 type 검사
 switch v := i.(type) {
-  case int:
-    println("int")
-  case bool:
-    println("bool")
-  case string:
-    println("string")
-  default:
+case int:
+  println("int")
+case bool:
+  println("bool")
+case string:
+  println("string")
+default:
     println("unknown")
+}
+
+// Go 컴파일러가 자동으로 case문 블럭 마지막에 break문을 추가하기 때문에 자동으로 다음 블럭으로 넘어가지 않음.
+// 다음 블럭으로 넘어가기 위해선 fallthrough문을 명시해줘야 함.
+
+func check(val int) {
+  switch val {
+  case 1:
+    fmt.println("1 이하")
+  case 2:
+    fmt.println("2 이하")
+  case 3:
+    fmt.println("3 이하")
+  default:
+    fmt.println("default 도달")
+  }
 }
