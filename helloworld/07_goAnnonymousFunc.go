@@ -46,7 +46,7 @@ func calc(f func(int, int) int, a int, b int) int {
 //    함수 원형 정의하는 데도 사용될 수 있음. 위 예제에서 func(x int, y int) int 함수 원형이 코드상 반복되는 데 type문을 정의하여 간단히 표현
 type calculator func(int, int) int // 원형 정의
 
-func calc(f calculator, a int, b int) int {
+func calc(f calculator, a int, b int) int { // calculator 원형 사용
   result := f(a, b)
   return result
 }
